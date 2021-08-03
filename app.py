@@ -1,5 +1,7 @@
-from flask import Flask, app, render_template, request, redirect, url_for
+from flask import Flask, app, render_template, request, redirect,
 from flask_sqlalchemy import SQLAlchemy
+
+#to create a requirements.txt = pip3 freeze > requirements.txt
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'

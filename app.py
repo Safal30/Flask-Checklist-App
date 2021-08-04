@@ -23,7 +23,20 @@ def index():
     #show all todos
     todo_list = Todo.query.all()
 
-    return render_template("base.html", todo_list=todo_list)
+    # Load current count
+    f = open("count.txt", "r")
+    count = int(f.read())
+    f.close()
+
+    # Increment the count
+    count += 1
+
+    # Overwrite the count
+    f = open("count.txt", "w")
+    f.write(str(count))
+    f.close()
+
+    return render_template("base.html", todo_list=todo_list, count=count)
 
 
 """Adding a NEW ITEM To the DATABASE"""
